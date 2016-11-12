@@ -38,7 +38,7 @@ Usages:
     b2 clear_account
     b2 create_bucket <bucketName> [allPublic | allPrivate]
     b2 delete_bucket <bucketName>
-    b2 delete_file_version <fileName> <fileId>
+    b2 delete_file_version [<fileName>] <fileId>
     b2 download_file_by_id [--noProgress] <fileId> <localFileName>
     b2 download_file_by_name [--noProgress] <bucketName> <fileName> <localFileName>
     b2 get_file_info <fileId>
@@ -53,9 +53,11 @@ Usages:
     b2 make_url <fileId>
     b2 sync [--delete] [--keepDays N] [--skipNewer] [--replaceNewer] \
         [--compareVersions <option>] [--threads N] [--noProgress] \
-        [--excludeRegex <regex>] <source> <destination>
+        [--excludeRegex <regex> [--includeRegex <regex>]] [--dryRun] \
+        <source> <destination>
     b2 update_bucket <bucketName> [allPublic | allPrivate]
-    b2 upload_file [--sha1 <sha1sum>] [--contentType <contentType>] [--info <key>=<value>]* \
+    b2 upload_file [--sha1 <sha1sum>] [--contentType <contentType>] \
+        [--info <key>=<value>]* [--minPartSize N] \
         [--noProgress] [--threads N] <bucketName> <localFilePath> <b2FileName>
     b2 version
 
