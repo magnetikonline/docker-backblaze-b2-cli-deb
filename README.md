@@ -18,10 +18,10 @@ $ ./build.sh
 $ ./extractdeb.sh
 # package extract from container
 
-$ ls -l backblaze_0.1-1_amd64.deb
--rw-r--r-- 1 root root 713984 Jul 6 10:06 backblaze_0.1-1_amd64.deb
+$ ls -l backblaze-cli_0.7.2-1_amd64.deb
+-rw-r--r-- 1 root root 1223270 Apr 30 20:25 backblaze-cli_0.7.2-1_amd64.deb
 
-$ sudo dpkg -i backblaze_0.1-1_amd64.deb
+$ sudo dpkg -i backblaze-cli_0.7.2-1_amd64.deb
 # installing package to host system...
 
 # B2 CLI requires pip, lets install
@@ -32,31 +32,34 @@ This program provides command-line access to the B2 service.
 
 Usages:
 
-    b2 authorize_account [<accountId>] [<applicationKey>]
-    b2 cancel_all_unfinished_large_files <bucketName>
-    b2 cancel_large_file <fileId>
-    b2 clear_account
-    b2 create_bucket <bucketName> [allPublic | allPrivate]
-    b2 delete_bucket <bucketName>
-    b2 delete_file_version [<fileName>] <fileId>
-    b2 download_file_by_id [--noProgress] <fileId> <localFileName>
-    b2 download_file_by_name [--noProgress] <bucketName> <fileName> <localFileName>
-    b2 get_file_info <fileId>
+    b2 authorize-account [<accountId>] [<applicationKey>]
+    b2 cancel-all-unfinished-large-files <bucketName>
+    b2 cancel-large-file <fileId>
+    b2 clear-account
+    b2 create-bucket [--bucketInfo <json>] [--lifecycleRules <json>] <bucketName> [allPublic | allPrivate]
+    b2 delete-bucket <bucketName>
+    b2 delete-file-version [<fileName>] <fileId>
+    b2 download-file-by-id [--noProgress] <fileId> <localFileName>
+    b2 download-file-by-name [--noProgress] <bucketName> <fileName> <localFileName>
+    b2 get-account-info
+    b2 get-bucket <bucketName>
+    b2 get-download-auth [--prefix <fileNamePrefix>] [--duration <durationInSeconds>] <bucketName>
+    b2 get-file-info <fileId>
     b2 help [commandName]
-    b2 hide_file <bucketName> <fileName>
-    b2 list_buckets
-    b2 list_file_names <bucketName> [<startFileName>] [<maxToShow>]
-    b2 list_file_versions <bucketName> [<startFileName>] [<startFileId>] [<maxToShow>]
-    b2 list_parts <largeFileId>
-    b2 list_unfinished_large_files <bucketName>
+    b2 hide-file <bucketName> <fileName>
+    b2 list-buckets
+    b2 list-file-names <bucketName> [<startFileName>] [<maxToShow>]
+    b2 list-file-versions <bucketName> [<startFileName>] [<startFileId>] [<maxToShow>]
+    b2 list-parts <largeFileId>
+    b2 list-unfinished-large-files <bucketName>
     b2 ls [--long] [--versions] <bucketName> [<folderName>]
-    b2 make_url <fileId>
+    b2 make-url <fileId>
     b2 sync [--delete] [--keepDays N] [--skipNewer] [--replaceNewer] \
         [--compareVersions <option>] [--threads N] [--noProgress] \
         [--excludeRegex <regex> [--includeRegex <regex>]] [--dryRun] \
         <source> <destination>
-    b2 update_bucket <bucketName> [allPublic | allPrivate]
-    b2 upload_file [--sha1 <sha1sum>] [--contentType <contentType>] \
+    b2 update-bucket [--bucketInfo <json>] [--lifecycleRules <json>] <bucketName> [allPublic | allPrivate]
+    b2 upload-file [--sha1 <sha1sum>] [--contentType <contentType>] \
         [--info <key>=<value>]* [--minPartSize N] \
         [--noProgress] [--threads N] <bucketName> <localFilePath> <b2FileName>
     b2 version
