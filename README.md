@@ -1,4 +1,5 @@
 # Backblaze B2 CLI deb Dockerfile
+
 Creates a [Backblaze B2 CLI](https://github.com/Backblaze/B2_Command_Line_Tool) deb distribution package from latest mainline source, suitable for Ubuntu (tested with 16.04LTS) and variants.
 
 B2 CLI tool is for use with the [Backblaze B2 Cloud Storage](https://www.backblaze.com/b2/cloud-storage.html) service.
@@ -6,6 +7,7 @@ B2 CLI tool is for use with the [Backblaze B2 Cloud Storage](https://www.backbla
 Image has also been pushed to [Docker Hub](https://hub.docker.com/r/magnetikonline/backblazeb2clideb/).
 
 ## Usage
+
 With Docker already installed and working on host system:
 
 ```sh
